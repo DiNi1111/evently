@@ -1,0 +1,251 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Detailed Registration | EVENTLY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#5c403c",
+              "tertiary-fixed": "#e3e2e2",
+              "inverse-surface": "#e5e2e1",
+              "on-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#93000b",
+              "on-secondary-fixed-variant": "#8f1015",
+              "secondary-fixed-dim": "#ffb3ac",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-primary-fixed": "#410002",
+              "inverse-primary": "#bf0715",
+              "surface-tint": "#ffb4ab",
+              "surface-container-highest": "#353534",
+              "error": "#ffb4ab",
+              "on-secondary": "#680008",
+              "on-primary": "#690005",
+              "primary-container": "#dc2626",
+              "surface-variant": "#353534",
+              "on-primary-container": "#fff6f5",
+              "primary-fixed-dim": "#ffb4ab",
+              "on-secondary-fixed": "#410003",
+              "inverse-on-surface": "#313030",
+              "secondary-container": "#8f1015",
+              "primary": "#ffb4ab",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1c1b1b",
+              "primary-fixed": "#ffdad6",
+              "on-tertiary": "#2f3131",
+              "on-error": "#690005",
+              "on-background": "#e5e2e1",
+              "tertiary-container": "#717272",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed": "#ffdad6",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#464747",
+              "on-surface-variant": "#e6bdb8",
+              "tertiary": "#c7c6c6",
+              "surface": "#131313",
+              "secondary": "#ffb3ac",
+              "outline": "#ac8884",
+              "on-error-container": "#ffdad6",
+              "background": "#131313",
+              "on-tertiary-container": "#f9f8f8",
+              "tertiary-fixed-dim": "#c7c6c6",
+              "surface-container": "#201f1f",
+              "on-secondary-container": "#ff9990"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(28, 28, 28, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
+            border-color: #dc2626;
+        }
+        /* Custom scrollbar for a seamless dark look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-4 pt-24 pb-16 relative overflow-hidden">
+<!-- Background Accents -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-red-900/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/5 rounded-full blur-[100px]"></div>
+<!-- Registration Card -->
+<div class="glass-card w-full max-w-3xl p-8 md:p-12 rounded-xl shadow-2xl relative z-10">
+<div class="mb-10 text-center">
+<h1 class="text-3xl md:text-4xl font-headline font-black tracking-tight text-white uppercase mb-2" style="">&nbsp;REGISTRATION</h1>
+<p class="text-neutral-400 text-sm tracking-widest uppercase" style=""><br></p>
+</div>
+<form class="space-y-8">
+<!-- Personal Info Section -->
+<div class="space-y-6">
+<h2 class="text-xs font-black text-white/40 uppercase tracking-[0.3em] border-b border-white/10 pb-2" style="">01. Personal Identity</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2 col-span-1 md:col-span-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Full Name</label>
+<input class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface placeholder-neutral-600 focus:outline-none input-glow transition-all duration-300" placeholder="e.g. Alexander Vance" type="text">
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Professional Email</label>
+<input class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface placeholder-neutral-600 focus:outline-none input-glow transition-all duration-300" placeholder="vance@evently.com" type="email">
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">LinkedIn Profile URL</label>
+<input class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface placeholder-neutral-600 focus:outline-none input-glow transition-all duration-300" placeholder="linkedin.com/in/username" type="url">
+</div>
+</div>
+</div>
+<!-- Professional Background Section -->
+<div class="space-y-6">
+<h2 class="text-xs font-black text-white/40 uppercase tracking-[0.3em] border-b border-white/10 pb-2" style="">02. Professional Credentials</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Organization</label>
+<input class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface placeholder-neutral-600 focus:outline-none input-glow transition-all duration-300" placeholder="Global Tech Corp" type="text">
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Professional Experience</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface appearance-none focus:outline-none input-glow transition-all duration-300">
+<option disabled="" selected="" value="">Select years</option>
+<option>Entry Level (0-2 years)</option>
+<option>Mid-Level (3-7 years)</option>
+<option>Senior Professional (8-12 years)</option>
+<option>Principal / Architect (13+ years)</option>
+<option>Executive Management</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-neutral-500">
+<span class="material-symbols-outlined" style="">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Primary Area of Expertise</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface appearance-none focus:outline-none input-glow transition-all duration-300">
+<option disabled="" selected="" value="">Field of Expertise</option>
+<option>Software Architecture</option>
+<option>UI/UX Design</option>
+<option>Cyber Security</option>
+<option>Data Science &amp; AI</option>
+<option>Cloud Infrastructure</option>
+<option>Blockchain Systems</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-neutral-500">
+<span class="material-symbols-outlined" style="">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Event Track</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface appearance-none focus:outline-none input-glow transition-all duration-300">
+<option disabled="" selected="" value="">Select specialization</option>
+<option>Cybersecurity Architecture</option>
+<option>AI Neural Networking</option>
+<option>Quantum Computing Systems</option>
+<option>FinTech Integrity</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-neutral-500">
+<span class="material-symbols-outlined" style="">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Logistics and Goals Section -->
+<div class="space-y-6">
+<h2 class="text-xs font-black text-white/40 uppercase tracking-[0.3em] border-b border-white/10 pb-2" style="">03. Summit Logistics &amp; Goals</h2>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">Dietary Requirements</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface appearance-none focus:outline-none input-glow transition-all duration-300">
+<option selected="" value="">None / Standard</option>
+<option>Vegetarian</option>
+<option>Vegan</option>
+<option>Gluten Free</option>
+<option>Halal</option>
+<option>Nut Allergy / Other (Please specify in goals)</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-neutral-500">
+<span class="material-symbols-outlined" style="">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-red-500 uppercase tracking-widest ml-1" style="">What are you hoping to learn at the event?</label>
+<textarea class="w-full bg-surface-container-low border border-neutral-800 rounded-lg px-4 py-3 text-on-surface placeholder-neutral-600 focus:outline-none input-glow transition-all duration-300 min-h-[120px]" placeholder="Share your primary objectives and expected outcomes..."></textarea>
+</div>
+</div>
+</div>
+<div class="pt-8">
+<button class="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold py-5 rounded-lg shadow-xl shadow-red-900/40 flex items-center justify-center gap-3 group transition-all duration-300 hover:scale-[1.01] active:scale-95" type="submit" style="">
+<span class="uppercase tracking-[0.2em] text-sm" style="">PROCEED TO cart</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="mt-8 pt-8 border-t border-neutral-800 flex items-center justify-center gap-8">
+<div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-red-500 text-lg" style="">verified_user</span>
+<span class="text-[10px] uppercase tracking-tighter" style="">256-Bit SSL Secure</span>
+</div>
+<div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-red-500 text-lg" style="">database</span>
+<span class="text-[10px] uppercase tracking-tighter" style="">Encrypted Storage</span>
+</div>
+<div class="flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-red-500 text-lg" style="">policy</span>
+<span class="text-[10px] uppercase tracking-tighter" style="">GDPR Compliant</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center px-8 py-6">
+<div class="text-sm font-bold text-red-600 mb-4 md:mb-0" style=""><br></div>
+<div class="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-600 text-center mb-4 md:mb-0" style=""><br></div>
+<div class="flex gap-6">
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-400 transition-colors opacity-80 hover:opacity-100" href="#" style=""><br></a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-400 transition-colors opacity-80 hover:opacity-100" href="#" style=""><br></a>
+<a class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 hover:text-red-400 transition-colors opacity-80 hover:opacity-100" href="#" style=""><br></a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#93000b",
+              "on-secondary-fixed-variant": "#8f1015",
+              "secondary-fixed-dim": "#ffb3ac",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-primary-fixed": "#410002",
+              "inverse-primary": "#bf0715",
+              "outline-variant": "#5c403c",
+              "tertiary-fixed": "#e3e2e2",
+              "inverse-surface": "#e5e2e1",
+              "on-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "primary-container": "#dc2626",
+              "surface-variant": "#353534",
+              "surface-tint": "#ffb4ab",
+              "surface-container-highest": "#353534",
+              "error": "#ffb4ab",
+              "on-secondary": "#680008",
+              "on-primary": "#690005",
+              "secondary-container": "#8f1015",
+              "primary": "#ffb4ab",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1c1b1b",
+              "primary-fixed": "#ffdad6",
+              "on-tertiary": "#2f3131",
+              "on-error": "#690005",
+              "on-background": "#e5e2e1",
+              "on-primary-container": "#fff6f5",
+              "primary-fixed-dim": "#ffb4ab",
+              "on-secondary-fixed": "#410003",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-container": "#f9f8f8",
+              "tertiary-fixed-dim": "#c7c6c6",
+              "surface-container": "#201f1f",
+              "on-secondary-container": "#ff9990",
+              "tertiary-container": "#717272",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed": "#ffdad6",
+              "error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#464747",
+              "on-surface-variant": "#e6bdb8",
+              "tertiary": "#c7c6c6",
+              "surface": "#131313",
+              "secondary": "#ffb3ac",
+              "outline": "#ac8884",
+              "on-error-container": "#ffdad6",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- Shell Suppression: Checkout screens do not show TopNavBar/BottomNavBar -->
+<main class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface-container-lowest pt-16"><nav class="bg-black/50 backdrop-blur-md text-red-600 dark:text-red-500 font-sans font-bold uppercase tracking-tight fixed top-0 w-full z-50 border-b border-red-900/30 shadow-lg shadow-red-900/10 flex justify-between items-center px-6 h-16 w-full">
+<div class="text-2xl font-black text-white italic tracking-tighter" style="">
+    EVENTLY
+  </div>
+</nav>
+<!-- Shopping Cart Modal Centered -->
+<section class="relative z-20 w-full max-w-lg p-6 md:p-0">
+<div class="glass-panel w-full rounded-2xl shadow-2xl p-8 flex flex-col gap-8">
+<!-- Header -->
+<div class="flex justify-between items-center border-b border-red-900/30 pb-6">
+<h2 class="text-2xl font-bold tracking-tight text-white uppercase" style="">Shopping Cart</h2>
+<div class="w-12 h-12 rounded-full border border-primary-container flex items-center justify-center text-primary-container bg-red-900/10">
+<span class="material-symbols-outlined text-3xl" data-icon="fingerprint" style="">fingerprint</span>
+</div>
+</div>
+<!-- Item List -->
+<div class="space-y-6">
+<div class="group flex flex-col gap-2 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-red-500/30 transition-all">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-sm font-mono tracking-widest text-red-400 font-bold" style="">HACK THE QUAD '26</h3>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today" style="">calendar_today</span>
+<span class="" style="">Mar 14</span>
+<span class="mx-1 opacity-30" style="">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="" style="">Kothamangalam Campus</span>
+</div>
+</div>
+<span class="text-lg font-bold text-white" style="">$149.00</span>
+</div>
+<div class="flex justify-between items-center mt-2 pt-2 border-t border-white/5">
+<span class="text-xs text-neutral-500 uppercase tracking-tighter" style="">Quantity: 1</span>
+<button class="text-xs text-red-500 font-bold hover:underline" style="">REMOVE</button>
+</div>
+</div>
+<div class="group flex flex-col gap-2 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-red-500/30 transition-all">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-sm font-mono tracking-widest text-red-400 font-bold" style="">CULTURAL SYNC FEST</h3>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today" style="">calendar_today</span>
+<span class="" style="">Apr 21</span>
+<span class="mx-1 opacity-30" style="">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span>
+<span class="" style="">Central Auditorium</span>
+</div>
+</div>
+<span class="text-lg font-bold text-white" style="">$198.00</span>
+</div>
+<div class="flex justify-between items-center mt-2 pt-2 border-t border-white/5">
+<span class="text-xs text-neutral-500 uppercase tracking-tighter" style="">Quantity: 2</span>
+<button class="text-xs text-red-500 font-bold hover:underline" style="">REMOVE</button>
+</div>
+</div>
+</div>
+<!-- Summary -->
+<div class="bg-black/40 p-6 rounded-xl space-y-3 border border-red-900/20">
+<div class="flex justify-between text-sm">
+<span class="text-neutral-400 uppercase tracking-widest" style="">SUBTOTAL</span>
+<span class="text-white" style="">$347.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-neutral-400 uppercase tracking-widest" style="">TERMINAL FEES</span>
+<span class="text-white" style="">$12.50</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-white/10 mt-3">
+<span class="text-lg font-bold tracking-tighter text-white" style="">GRAND TOTAL</span>
+<span class="text-2xl font-black text-white" style="">$359.50</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-gradient-to-r from-red-600 to-[#ff9990] hover:from-red-500 hover:to-[#ffb4ab] text-on-primary-fixed font-black py-4 rounded-lg flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg shadow-red-900/40 uppercase tracking-widest text-sm" style="">
+                    COMPLETE PAYMENT
+                    <span class="material-symbols-outlined" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+<!-- Footnote -->
+<div class="text-center space-y-2">
+<p class="text-[10px] leading-relaxed text-neutral-500 uppercase tracking-tighter" style="">
+                        All event registrations are final. Check deployment details carefully before synchronization.
+                    </p>
+<a class="inline-block text-[10px] font-bold text-red-500 hover:text-red-400 uppercase tracking-widest border-b border-red-500/30" href="#" style="">
+                        Payment Terms
+                    </a>
+</div>
+</div>
+</section>
+<!-- Technical Footer -->
+<footer class="fixed bottom-0 w-full z-30 px-6 py-4 flex justify-between items-center bg-black/60 backdrop-blur-sm border-t border-white/5">
+<div class="flex gap-8">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
+<span class="font-mono text-[10px] tracking-widest text-neutral-400 uppercase" style=""><br/></span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-teal-500"></div>
+<span class="font-mono text-[10px] tracking-widest text-neutral-400 uppercase" style=""><br/></span>
+</div>
+</div>
+<div class="hidden md:block">
+<span class="font-mono text-[10px] tracking-widest text-neutral-600 uppercase" style=""></span>
+</div>
+</footer>
+</main>
+</body></html>

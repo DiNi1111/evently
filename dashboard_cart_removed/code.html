@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOCTURNE | Event Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary-fixed": "#410003", "surface-container-low": "#1c1b1b", "on-secondary-container": "#ff9990", "surface-container-high": "#2a2a2a", error: "#ffb4ab", "secondary-fixed-dim": "#ffb3ac", "on-tertiary-container": "#f9f8f8", "surface-container": "#201f1f", "inverse-surface": "#e5e2e1", "on-secondary-fixed-variant": "#8f1015", "error-container": "#93000a", "on-primary-fixed": "#410002", "primary-container": "#dc2626", "on-tertiary": "#2f3131", background: "#131313", "on-tertiary-fixed-variant": "#464747", "surface-bright": "#393939", "on-error-container": "#ffdad6", secondary: "#ffb3ac", "on-primary-fixed-variant": "#93000b", "on-primary": "#690005", "on-primary-container": "#fff6f5", "on-secondary": "#680008", "tertiary-container": "#717272", "surface-container-lowest": "#0e0e0e", "primary-fixed": "#ffdad6", "inverse-on-surface": "#313030", "secondary-container": "#8f1015", "tertiary-fixed": "#e3e2e2", "surface-tint": "#ffb4ab", "surface-container-highest": "#353534", "on-background": "#e5e2e1", surface: "#131313", "on-error": "#690005", "secondary-fixed": "#ffdad6", "on-surface": "#e5e2e1", "inverse-primary": "#bf0715", "surface-dim": "#131313", "tertiary-fixed-dim": "#c7c6c6", "outline-variant": "#5c403c", "surface-variant": "#353534", outline: "#ac8884", tertiary: "#c7c6c6", "primary-fixed-dim": "#ffb4ab", "on-tertiary-fixed": "#1a1c1c", primary: "#ffb4ab", "on-surface-variant": "#e6bdb8"}, fontFamily: {headline: ["Inter"], body: ["Inter"], label: ["Inter"], display: "Inter"}, borderRadius: {DEFAULT: "0px", lg: "0px", xl: "0px", full: "0px"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-panel {
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .celestial-gradient {
+            background: linear-gradient(135deg, #adc6ff 0%, #4d8eff 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-md bg-[#171f33] border-b border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex justify-between items-center px-8 h-16 w-full max-w-none">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-[0.1em] font-headline" style="color: #dc2626;">EVENTLY</span>
+</div>
+<div class="flex-1 max-w-xl px-12">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm" style="">search</span>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-container text-xs tracking-widest uppercase py-2.5 pl-10 rounded-lg placeholder:text-outline/50" placeholder="QUERY SYSTEM..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="h-8 w-8 rounded-full bg-surface-container-highest border border-outline-variant/20 overflow-hidden">
+<img alt="User" class="" data-alt="minimalist geometric profile avatar with neon blue and charcoal gray color scheme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4cCDQVx8V755PPLrtc14ny5UMpZTD9kbtHApug60DImx8eFGvz_zWu_Q8J7aJhRX2mlBxJoOZXwIgUBPNH16qmJ1bEY7OY6ZM64LoqIAyx0xAFfvu5MNbYWFiJgwSfeOIvHVlePZ_qaCwPNOMyQYE5RIj6kgOzLl4dCwLnWtzbhU2IbIGLYDy_eaOxpo3ONcs9i8912RYOtcPPEFALAUTARiutjXrMGg4arm78a3GqfXnpzU_Ni5NGUPcyzYGCfuJc50Lf4sPEMM" style=""/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<!-- Bento Filter Bar -->
+<div class="flex items-center justify-between mb-8">
+<div class="flex gap-4">
+<button class="bg-primary-container/10 text-primary-container px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase border border-primary-container/20" style="">All Events</button>
+<button class="bg-surface-container text-on-surface-variant px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase hover:bg-surface-container-high transition-colors" style="">Technical</button>
+<button class="bg-surface-container text-on-surface-variant px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest uppercase hover:bg-surface-container-high transition-colors" style="">Creative</button>
+</div>
+<div class="text-[10px] tracking-widest uppercase text-outline font-medium flex items-center gap-2" style=""></div>
+</div>
+<!-- Event Architecture Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Event Card 1 -->
+<div class="group bg-surface-container rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+<div class="h-48 relative overflow-hidden">
+<img alt="Cyberpunk City" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="cinematic cyberpunk city at night with blue neon lights and dark rainy streets high contrast editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ux86ZgDpPrYDQvLO3r4M_vX6em427GtJelPPkpaARw3cYCLN6rRAJZlycXp-OanSZ5ElcUoTTwIh4CsIFF20DauHZFAnatucni9dhW2BaNRYL44Gn8xcTbS2zbovfMje-ZP_SibfyVlxLDOFb2qZ0IlDA0tDduK06P3U9PhGo3v0Gz9RUA_eCR8Vx-GfGyBXo46p3DJc0qrNteVHYBDTx7zUK-xJqmNSmAHWjub_xpk3jsTHm4cxNuVnhYqSYcrwQjOJUxesCRQ" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-tertiary-container/20 backdrop-blur-md text-tertiary px-2 py-1 text-[9px] font-bold uppercase tracking-widest border border-white/10" style="">Level 01</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold font-headline mb-2 group-hover:text-primary transition-colors uppercase tracking-tight" style="">Synthetica Summit 2024</h3>
+<div class="flex items-center gap-4 text-outline text-[10px] font-bold uppercase tracking-widest mb-6">
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" style="">calendar_today</span> Oct 12
+                        </div>
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" style="">location_on</span> Neo Tokyo
+                        </div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface text-[10px] font-bold tracking-widest uppercase rounded hover:bg-primary-container/20 transition-all" style="">edit</button>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group bg-surface-container rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+<div class="h-48 relative overflow-hidden">
+<img alt="Nebula" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="abstract cosmic nebula with deep blue and purple gases swirling around distant stars high resolution scientific style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7CKYnIPNElnbPi6NHtZyXEsk7r-abgDJheXs5U0jamSxYqiBqWHt0g9RYWbwU08wxclmr3AlHdKFz0hYR7tMIGBS-mdi8XfenuhaUHO7zJ8evnqaVlXhAsl8luvi265SC4u-csKhtXw3Ntd7dOhFexfnTCaGQU-TkSypnFlCQWGZTPEbdu_B3NxPMWPpk4BxxcCOp5vOLq3sqFSshLMXW-8sBLW3k4oFU2YS8PPCs629OehRNfV4zrKS2zwyrnoxpVyeUSrIlBss" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-tertiary-container/20 backdrop-blur-md text-tertiary px-2 py-1 text-[9px] font-bold uppercase tracking-widest border border-white/10" style="">Celestial</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold font-headline mb-2 group-hover:text-primary transition-colors uppercase tracking-tight" style="">Void Discovery Protocol</h3>
+<div class="flex items-center gap-4 text-outline text-[10px] font-bold uppercase tracking-widest mb-6">
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" style="">calendar_today</span> Nov 05
+                        </div>
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" data-location="San Francisco" style="">location_on</span> SF Orbit
+                        </div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface text-[10px] font-bold tracking-widest uppercase rounded hover:bg-primary-container/20 transition-all" style="">edit</button>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="group bg-surface-container rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px]">
+<div class="h-48 relative overflow-hidden">
+<img alt="Processor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="close up of a microchip with intricate glowing circuitry paths in electric blue professional technology photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU2ar9CJlseK8x5Dp1fAFITHN5Z8oax_07RadHnz7wVZfib2oXOIZayP6wvn6jor-ZrtVJC0vPanEHK_9OxmOoQ2jtpDBLBfvrx8fkPDwvwWCzmJ3Dd4AKRbRHjI_bW8H-qTeeBZOctIrwGvE3hZ_aqrt9fbFGQlrtPX2FrbdoZZsUA22DaKJ222IhcKftsza7O9NaULjwSqkS0mfewp793dKgNxqwJc_pI4dHGpo6uPLZ5LPLZFMqtoEb3PJG1m7wis9EuHdZljM" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-tertiary-container/20 backdrop-blur-md text-tertiary px-2 py-1 text-[9px] font-bold uppercase tracking-widest border border-white/10" style="">Hardware</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold font-headline mb-2 group-hover:text-primary transition-colors uppercase tracking-tight" style="">Silicon Foundry Expo</h3>
+<div class="flex items-center gap-4 text-outline text-[10px] font-bold uppercase tracking-widest mb-6">
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" style="">calendar_today</span> Dec 01
+                        </div>
+<div class="flex items-center gap-1.5" style="">
+<span class="material-symbols-outlined text-xs" data-location="Berlin" style="">location_on</span> Berlin Lab
+                        </div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface text-[10px] font-bold tracking-widest uppercase rounded hover:bg-primary-container/20 transition-all" style="">edit</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#0b1326]/90 backdrop-blur-lg border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-50">
+<a class="flex flex-col items-center justify-center text-blue-400 bg-blue-500/10 rounded-lg px-6 py-2 active:translate-y-1 scale-95 transition-all" href="#" style="">
+<span class="material-symbols-outlined" data-icon="terminal" style="">terminal</span>
+<span class="font-manrope text-[10px] tracking-widest uppercase font-bold mt-1" style="">Command</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="grid_view" style="">grid_view</span>
+<span class="font-manrope text-[10px] tracking-widest uppercase font-bold mt-1" style="">Grid</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="insights" style="">insights</span>
+<span class="font-manrope text-[10px] tracking-widest uppercase font-bold mt-1" style="">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="settings" style="">settings</span>
+<span class="font-manrope text-[10px] tracking-widest uppercase font-bold mt-1" style="">Settings</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-8 md:bottom-12 md:right-12 h-14 w-14 celestial-gradient text-on-primary rounded-full shadow-[0_0_30px_rgba(77,142,255,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40" style="">
+<span class="material-symbols-outlined text-3xl" style="">add</span>
+</button>
+<!-- Creator Modal (Implicit via Structure) -->
+<div class="fixed inset-0 bg-background/80 backdrop-blur-sm z-[60] flex items-end justify-center pointer-events-none opacity-0">
+<div class="w-full max-w-2xl bg-surface-container rounded-t-3xl p-8 border-t border-white/10 shadow-2xl translate-y-full transition-transform duration-500 pointer-events-auto">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl font-black font-headline tracking-tight uppercase" style="">Initialize New Event</h2>
+<p class="text-[10px] tracking-widest uppercase text-outline" style="">Creator Interface / Node Deployment</p>
+</div>
+<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-white/5 text-outline" style="">
+<span class="material-symbols-outlined" style="">close</span>
+</button>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] tracking-widest uppercase font-bold text-outline mb-2" style="">Event Name</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-container text-sm py-3 px-4 rounded-lg placeholder:text-outline/30" placeholder="Protocol Designation..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-[10px] tracking-widest uppercase font-bold text-outline mb-2" style="">Operation Date</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-container text-sm py-3 px-4 rounded-lg text-on-surface" type="date"/>
+</div>
+<div>
+<label class="block text-[10px] tracking-widest uppercase font-bold text-outline mb-2" style="">Classification</label>
+<select class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-container text-sm py-3 px-4 rounded-lg text-on-surface">
+<option>Technical</option>
+<option>Creative</option>
+<option>Social</option>
+<option>Research</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-[10px] tracking-widest uppercase font-bold text-outline mb-2" style="">Technical Description</label>
+<textarea class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary-container text-sm py-3 px-4 rounded-lg placeholder:text-outline/30" placeholder="Define the event parameters and objectives..." rows="3"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 celestial-gradient text-on-primary font-bold text-xs tracking-[0.2em] uppercase rounded-lg shadow-lg hover:shadow-primary/20 transition-all" style="" type="submit">
+                        Commit to Blockchain
+                    </button>
+</div>
+</form>
+</div>
+</div>
+</body></html>
