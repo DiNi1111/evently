@@ -8,6 +8,7 @@ export interface CartEvent {
   price: number;
   category: string;
   quantity: number;
+  registrationDetails?: any;
 }
 
 interface CartContextType {

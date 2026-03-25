@@ -18,6 +18,7 @@ export interface EventData {
 interface EventContextType {
   allEvents: EventData[];
   addEvent: (event: Omit<EventData, 'id'>) => void;
+  updateEvent: (id: string, updatedData: Partial<EventData>) => void;
 }
 
 const INITIAL_EVENTS: EventData[] = [
@@ -93,8 +94,14 @@ export const EventProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setAllEvents((prev) => [newEvent, ...prev]);
   };
 
+  const updateEvent = (id: string, updatedData: Partial<EventData>) => {
+    setAllEvents((prev) =>
+      prev.map((evt) => (evt.id === id ? { ...evt, ...updatedData } : evt))
+    );
+  };
+
   return (
-    <EventContext.Provider value={{ allEvents, addEvent }}>
+    <EventContext.Provider value={{ allEvents, addEvent, updateEvent }}>
       {children}
     </EventContext.Provider>
   );

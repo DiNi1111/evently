@@ -50,26 +50,14 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/events')}
-            className={`text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors hidden md:block ${
-              location.pathname === '/events' ? 'text-red-500' : ''
-            }`}
+            className={`text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors hidden md:block ${location.pathname === '/events' ? 'text-red-500' : ''
+              }`}
           >
             Events
           </button>
 
           {/* Role-Specific Control */}
-          {role === 'ADMIN' ? (
-            <button
-              id="admin-settings-btn"
-              onClick={() => {}}
-              className="h-10 w-10 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant/20 hover:border-red-600/40 hover:bg-red-900/20 transition-all duration-200 group"
-              aria-label="Admin Settings"
-            >
-              <span className="material-symbols-outlined text-[22px] text-neutral-400 group-hover:text-red-400 transition-colors">
-                settings
-              </span>
-            </button>
-          ) : (
+          {role === 'ADMIN' ? null : (
             /* Cart button for users */
             <button
               id="cart-nav-btn"
@@ -89,7 +77,7 @@ const Navbar: React.FC = () => {
           )}
 
           {/* Profile avatar / Logout */}
-          <button 
+          <button
             onClick={handleLogout}
             className="h-9 w-9 rounded-full bg-surface-container-highest border border-outline-variant/20 overflow-hidden flex items-center justify-center text-neutral-400 hover:border-red-600/40 transition-all duration-200 group"
           >

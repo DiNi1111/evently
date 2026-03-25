@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useCart } from '../context/CartContext';
 
 const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { addToCart } = useCart();
+  const event = location.state?.event;
   const [form, setForm] = useState({
     fullName: '',
     email: '',
     linkedin: '',
     organization: '',
     experience: '',
-    expertise: '',
-    track: '',
     dietary: 'None / Standard',
     goals: '',
   });
@@ -27,8 +29,7 @@ const RegisterPage: React.FC = () => {
     if (!form.fullName.trim()) newErrors.fullName = 'Required';
     if (!form.email.trim()) newErrors.email = 'Required';
     if (!form.experience) newErrors.experience = 'Required';
-    if (!form.expertise) newErrors.expertise = 'Required';
-    if (!form.track) newErrors.track = 'Required';
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -36,6 +37,20 @@ const RegisterPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    
+    if (event) {
+      const cartItem = {
+        id: event.id,
+        name: event.name,
+        date: event.date,
+        location: event.location,
+        price: event.price,
+        category: event.category,
+        registrationDetails: { ...form },
+      };
+      addToCart(cartItem);
+    }
+    
     toast.success('Registration submitted! Proceed to cart.', {
       style: {
         background: '#1c1b1b',
@@ -97,7 +112,7 @@ const RegisterPage: React.FC = () => {
                   <input
                     className={inputClass()}
                     placeholder="linkedin.com/in/username"
-                    type="url"
+                    type="text"
                     value={form.linkedin}
                     onChange={(e) => update('linkedin', e.target.value)}
                   />
@@ -112,17 +127,17 @@ const RegisterPage: React.FC = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1">
-                  <label className={labelClass}>Organization</label>
+                  <label className={labelClass}>BRANCH</label>
                   <input
                     className={inputClass()}
-                    placeholder="Global Tech Corp"
+                    placeholder="Artificial Intelligence"
                     type="text"
                     value={form.organization}
                     onChange={(e) => update('organization', e.target.value)}
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className={labelClass}>Professional Experience</label>
+                  <label className={labelClass}>YEAR</label>
                   <div className="relative">
                     <select
                       className={`${inputClass('experience')} appearance-none`}
@@ -130,11 +145,11 @@ const RegisterPage: React.FC = () => {
                       onChange={(e) => update('experience', e.target.value)}
                     >
                       <option value="" disabled>Select years</option>
-                      <option>Entry Level (0-2 years)</option>
-                      <option>Mid-Level (3-7 years)</option>
-                      <option>Senior Professional (8-12 years)</option>
-                      <option>Principal / Architect (13+ years)</option>
-                      <option>Executive Management</option>
+                      <option>First year</option>
+                      <option>Second year</option>
+                      <option>Third year</option>
+                      <option>Final year</option>
+
                     </select>
                     <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none text-[20px]">
                       expand_more
@@ -142,7 +157,7 @@ const RegisterPage: React.FC = () => {
                   </div>
                   {errors.experience && <p className="text-red-500 text-[10px] ml-1">{errors.experience}</p>}
                 </div>
-                <div className="space-y-1">
+                {/* <div className="space-y-1">
                   <label className={labelClass}>Primary Area of Expertise</label>
                   <div className="relative">
                     <select
@@ -163,8 +178,8 @@ const RegisterPage: React.FC = () => {
                     </span>
                   </div>
                   {errors.expertise && <p className="text-red-500 text-[10px] ml-1">{errors.expertise}</p>}
-                </div>
-                <div className="space-y-1">
+                </div> */}
+                {/* <div className="space-y-1">
                   <label className={labelClass}>Event Track</label>
                   <div className="relative">
                     <select
@@ -183,7 +198,7 @@ const RegisterPage: React.FC = () => {
                     </span>
                   </div>
                   {errors.track && <p className="text-red-500 text-[10px] ml-1">{errors.track}</p>}
-                </div>
+                </div> */}
               </div>
             </div>
 

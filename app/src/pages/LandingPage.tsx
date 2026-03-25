@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
       if (selectedRole === 'ADMIN') {
         navigate('/admin/dashboard');
       } else {
-        navigate('/user/dashboard');
+        navigate('/events');
       }
     }, 800);
   };

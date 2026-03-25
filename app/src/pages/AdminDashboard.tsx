@@ -7,7 +7,7 @@ import dashboardImg from '../assets/dashboard_screen.png';
 const AdminDashboard: React.FC = () => {
   const { allEvents, addEvent } = useEvents();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
   // Form State
   const [formData, setFormData] = useState({
     name: '',
@@ -20,7 +20,7 @@ const AdminDashboard: React.FC = () => {
 
   const handleDeploy = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation
     if (!formData.name || !formData.time || !formData.venue || !formData.description || !formData.coordinatorId) {
       toast.error('All fields are required for synchronization.');
@@ -42,7 +42,7 @@ const AdminDashboard: React.FC = () => {
 
     toast.success('Event successfully deployed to the grid.');
     setIsModalOpen(false);
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -74,7 +74,7 @@ const AdminDashboard: React.FC = () => {
             </div>
             <h1 className="text-4xl font-black text-white uppercase tracking-tight">System Control</h1>
           </div>
-          
+
           <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
             <Dialog.Trigger asChild>
               <button className="btn-glow bg-red-600 hover:bg-red-500 text-white font-black px-6 py-3 rounded-lg flex items-center gap-3 transition-all text-xs uppercase tracking-widest">
@@ -82,13 +82,13 @@ const AdminDashboard: React.FC = () => {
                 Initialize New Event
               </button>
             </Dialog.Trigger>
-            
+
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 animate-fade-in" />
               <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-neutral-900/90 backdrop-blur-md border border-red-600/30 p-8 rounded-2xl shadow-2xl z-50 focus:outline-none overflow-hidden">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-pink-400 to-red-600" />
-                
+
                 <Dialog.Title className="text-xl font-black text-white uppercase tracking-tighter mb-2 flex items-center gap-2">
                   <span className="material-symbols-outlined text-red-500">settings_input_component</span>
                   Initialize New <span className="text-pink-400">Event</span>
@@ -101,10 +101,10 @@ const AdminDashboard: React.FC = () => {
                   <div className="space-y-1.5 relative">
                     <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Event Name</label>
                     <div className="relative">
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="ENTER PROTOCOL NAME"
                         className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors placeholder:text-neutral-700"
                       />
@@ -116,9 +116,9 @@ const AdminDashboard: React.FC = () => {
                     <div className="space-y-1.5">
                       <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Category</label>
                       <div className="relative">
-                        <select 
+                        <select
                           value={formData.category}
-                          onChange={(e) => setFormData({...formData, category: e.target.value as EventData['category']})}
+                          onChange={(e) => setFormData({ ...formData, category: e.target.value as EventData['category'] })}
                           className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors appearance-none cursor-pointer"
                         >
                           <option value="Technical">Technical</option>
@@ -130,11 +130,11 @@ const AdminDashboard: React.FC = () => {
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Temporal Sync</label>
-                      <input 
-                        type="time" 
+                      <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Time</label>
+                      <input
+                        type="time"
                         value={formData.time}
-                        onChange={(e) => setFormData({...formData, time: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                         className="w-full bg-black/40 border border-white/10 rounded-lg py-2 px-3 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors [color-scheme:dark]"
                       />
                     </div>
@@ -142,21 +142,21 @@ const AdminDashboard: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Deployment Zone</label>
-                      <input 
-                        type="text" 
+                      <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Venue</label>
+                      <input
+                        type="text"
                         value={formData.venue}
-                        onChange={(e) => setFormData({...formData, venue: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, venue: e.target.value })}
                         placeholder="VENUE / ZONE"
                         className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors placeholder:text-neutral-700"
                       />
                     </div>
                     <div className="space-y-1.5">
                       <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Coordinator ID</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={formData.coordinatorId}
-                        onChange={(e) => setFormData({...formData, coordinatorId: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, coordinatorId: e.target.value })}
                         placeholder="ADMIN-XXX"
                         className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors placeholder:text-neutral-700 font-mono"
                       />
@@ -165,10 +165,10 @@ const AdminDashboard: React.FC = () => {
 
                   <div className="space-y-1.5">
                     <label className="text-[9px] font-black text-neutral-500 uppercase tracking-widest block ml-1">Technical Brief</label>
-                    <textarea 
+                    <textarea
                       rows={3}
                       value={formData.description}
-                      onChange={(e) => setFormData({...formData, description: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       placeholder="DETAILED SPECIFICATIONS"
                       className="w-full bg-black/40 border border-white/10 rounded-lg py-2.5 px-4 text-sm text-white focus:outline-none focus:border-red-500/50 transition-colors placeholder:text-neutral-700 resize-none"
                     />
@@ -181,8 +181,8 @@ const AdminDashboard: React.FC = () => {
                       </button>
                     </Dialog.Close>
                     <button type="submit" className="flex-[2] py-3 rounded-lg bg-red-600 hover:bg-red-500 text-white text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] flex items-center justify-center gap-2 group/btn">
-                       <span className="material-symbols-outlined text-sm group-hover/btn:text-pink-300 transition-colors">rocket_launch</span>
-                       Deploy <span className="group-hover/btn:text-pink-300 transition-colors">Event</span>
+                      <span className="material-symbols-outlined text-sm group-hover/btn:text-pink-300 transition-colors">rocket_launch</span>
+                      Deploy <span className="group-hover/btn:text-pink-300 transition-colors">Event</span>
                     </button>
                   </div>
                 </form>
@@ -196,7 +196,7 @@ const AdminDashboard: React.FC = () => {
           {/* Card 1: Attendee Metrics */}
           <div className="glass-card p-6 rounded-xl border border-white/5 space-y-4">
             <div className="flex justify-between items-start text-neutral-500">
-              <span className="text-[10px] font-bold uppercase tracking-widest">Attendee Metrics</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">Attendees</span>
               <span className="material-symbols-outlined text-[18px]">groups</span>
             </div>
             <div className="space-y-1">
@@ -234,7 +234,7 @@ const AdminDashboard: React.FC = () => {
           {/* Card 3: Active Buffers */}
           <div className="glass-card p-6 rounded-xl border border-white/5 space-y-4">
             <div className="flex justify-between items-start text-neutral-500">
-              <span className="text-[10px] font-bold uppercase tracking-widest">Active Sessions</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">Active Events</span>
               <span className="material-symbols-outlined text-[18px]">hub</span>
             </div>
             <div className="space-y-1">
@@ -257,18 +257,18 @@ const AdminDashboard: React.FC = () => {
               <span className="text-[10px] font-bold text-neutral-600 uppercase cursor-pointer hover:text-neutral-400">Archived</span>
             </div>
           </div>
-          
+
           <div className="p-8 space-y-6">
             {allEvents.map((event) => (
               <div key={event.id} className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-transparent hover:border-red-600/30 transition-all cursor-pointer group animate-fade-in">
                 <div className="flex items-center gap-6">
-                   <div className="w-12 h-12 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center text-red-500">
-                     <span className="material-symbols-outlined">{event.category === 'Technical' ? 'terminal' : 'event'}</span>
-                   </div>
-                   <div className="space-y-1">
-                     <div className="text-sm font-black text-white uppercase tracking-wider">{event.name}</div>
-                     <div className="text-[10px] text-neutral-500 uppercase font-bold">Deploying to: {event.location} • {event.date}</div>
-                   </div>
+                  <div className="w-12 h-12 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center text-red-500">
+                    <span className="material-symbols-outlined">{event.category === 'Technical' ? 'terminal' : 'event'}</span>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-sm font-black text-white uppercase tracking-wider">{event.name}</div>
+                    <div className="text-[10px] text-neutral-500 uppercase font-bold">Deploying to: {event.location} • {event.date}</div>
+                  </div>
                 </div>
                 <div className="flex items-center gap-8">
                   <div className="hidden md:block text-right">

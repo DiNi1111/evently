@@ -11,7 +11,6 @@ import EventsPage from './pages/EventsPage';
 import CartPage from './pages/CartPage';
 import RegisterPage from './pages/RegisterPage';
 import AdminDashboard from './pages/AdminDashboard';
-import UserDashboard from './pages/UserDashboard';
 
 const PrivateRoute: React.FC<{ element: React.ReactElement; roleRequired?: 'ADMIN' | 'USER' }> = ({
   element,
@@ -43,7 +42,7 @@ const App: React.FC = () => {
                 />
                 <Route
                   path="/user/dashboard"
-                  element={<PrivateRoute element={<UserDashboard />} roleRequired="USER" />}
+                  element={<Navigate to="/events" replace />}
                 />
               </Routes>
             </Layout>
